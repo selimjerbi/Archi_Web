@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Back</title>
+
+</head>
+<body>
+    <header>
+        <h1>Welcome Back, {{ user.username }}!</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Event Details</h2>
+            <p>{{ event.description }}</p>
+            <p>Date: {{ event.start_date }} to {{ event.end_date }}</p>
+        </section>
+        <section>
+            <h2>Choose Your Services</h2>
+            <a href="{% url 'select_services' %}">Select Services</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Weekend Event</p>
+    </footer>
+</body>
+</html>

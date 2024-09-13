@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekend Event</title>
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Weekend Event</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Event Description</h2>
+            <p>{{ weekend.description }}</p>
+            <p>Date: {{ weekend.start_date }} to {{ weekend.end_date }}</p>
+        </section>
+        <section>
+            {% if user.is_authenticated %}
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Se déconnecter</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}">Se connecter</a> |
+                <a href="{% url 'register' %}">S'inscrire</a>
+            {% endif %}
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Weekend Event</p>
+    </footer>
+
+    <!-- Lien vers le fichier JavaScript -->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

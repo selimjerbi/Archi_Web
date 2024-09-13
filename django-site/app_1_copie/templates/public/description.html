@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additional Information</title>
+</head>
+<body>
+    <header>
+        <h1>Additional Information</h1>
+        <a href="{% url 'home' %}">Retour à l'accueil</a>
+    </header>
+    <main>
+        <section>
+            <h2>weekend Description</h2>
+            <p>{{ weekend.description }}</p>
+            <p>Date: {{ weekend.start_date }} to {{ weekend.end_date }}</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Weekend Event</p>
+    </footer>
+</body>
+</html>
